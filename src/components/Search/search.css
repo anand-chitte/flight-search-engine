@@ -1,0 +1,29 @@
+.tabs {
+  box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.search-data {
+  width: 80%;
+  margin: auto;
+}
+
+.range {
+  height: 120px;
+  margin: auto;
+  border-radius: 7px;
+  box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.range h4 {
+  padding: 10px;
+}
+
+.range-data {
+  width: 80%;
+  margin: auto;
+}
+
+.range-data .value {
+  display: flex;
+  justify-content: center;
+}

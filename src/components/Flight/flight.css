@@ -1,0 +1,115 @@
+.route {
+  height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+  border-radius: 7px;
+  box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.route .flight-path {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.dates {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.dates span {
+  font-size: 13px;
+}
+
+.flight-info {
+  margin: auto;
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  border-radius: 7px;
+  align-items: center;
+  background-color: white;
+  justify-content: space-evenly;
+  box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.amount {
+  top: 15px;
+  font-size: 20px;
+  font-weight: bolder;
+  position: absolute;
+}
+.one-way,
+.return {
+  display: flex;
+  font-size: 15px;
+  flex-direction: column;
+}
+
+.one-way span,
+.return span {
+  margin: 3px 0;
+}
+
+.none {
+  display: none;
+}
+
+.booking {
+  width: 150px;
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+}
+
+.booking img {
+  width: 100%;
+  height: 150px;
+  border: 1px solid;
+}
+
+@media only screen and (max-width: 900px) {
+  .route {
+    flex-direction: column;
+  }
+
+  .route .flight-path {
+    margin: 10px 0;
+    flex-direction: column;
+  }
+
+  .amount {
+    font-size: 16px;
+  }
+  .one-way,
+  .return {
+    font-size: 13px;
+  }
+  .booking {
+    width: 115px;
+  }
+  .booking img {
+    height: 115px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .amount {
+    font-size: 14px;
+  }
+  .one-way,
+  .return {
+    font-size: 11px;
+  }
+  .booking {
+    width: 90px;
+  }
+  .booking img {
+    height: 90px;
+  }
+}

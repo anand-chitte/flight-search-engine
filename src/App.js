@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Flight from "./components/Flight/Flight";
+import Search from "./components/Search/Search";
+import Header from "./components/Header/Header";
+import RangeContext from "./context/RangeContext";
+import FlightContext from "./context/FlightContext";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  state = {
+    origin: "",
+    destination: "",
+    departure: "",
+    return: "",
+    persons: null,
+    range: [0, 5000],
+  };
+
+  handleDetails = (data) => {
+    this.setState({
+      origin: data.origin,
+      destination: data.destination,
+      departure: data.departure,
+      return: data.return,
+      persons: data.persons,
+    });
+  };
+
+  handleRange = (data) => {
+    this.setState({ range: data });
+  };
+
+  render() {
+    return (
+      <div className="main">
+        <Header />
+
+        <FlightContext.Provider
+          value={{ flight: this.state, toggleOnSubmit: this.handleDetails }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <RangeContext.Provider
+            value={{
+              range: this.state.range,
+              toggleOnChange: this.handleRange,
+            }}
+          >
+            <Search />
+            <Flight />
+          </RangeContext.Provider>
+        </FlightContext.Provider>
+      </div>
+    );
+  }
 }
 
 export default App;
